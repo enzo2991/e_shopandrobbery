@@ -193,7 +193,7 @@ Config.Shops = {
         CashRegister1 = {x = 24.32, y = -1344.91, z = 29.5, h = 272.17, robbed = false}, -- Cassette place (You can disable one of the cartridges by typing false)
         CashRegister2 = {x = 24.14, y = -1347.4, z = 29.5, h = 267.59, robbed = false}, -- Cassette place (You can disable one of the cartridges by typing false)
         Time = 300, -- The time that ped opens the safe
-        Money = 13020, -- The money you get from the safe
+        Money = 40, -- The money you get from the safe
     },
     {
         Name = 'District Davis',
@@ -203,6 +203,6 @@ Config.Shops = {
         CashRegister1 = {x = -47.72, y = -1759.56, z = 29.42, h = 49.02, robbed = false}, -- Cassette place (You can disable one of the cartridges by typing false)
         CashRegister2 = {x = -46.54, y = -1758.14, z = 29.42, h = 48.65, robbed = false}, -- Cassette place (You can disable one of the cartridges by typing false)
         Time = 300, -- The time that ped opens the safe
-        Money = 11030, -- The money you get from the safe
+        Money = 20, -- The money you get from the safe
     },
 }

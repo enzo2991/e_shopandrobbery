@@ -46,7 +46,7 @@ Citizen.CreateThread(function ()
         Citizen.Wait(0)
     end
 
-    local listRobbery = lib.callback.await("o_shopandrobbery:getListRobbery")
+    local listRobbery = lib.callback.await("e_shopandrobbery:getListRobbery")
     DebugPrint("CreateNpc on Spawn")
     for k,v in pairs(Config.Shops) do
         Blips[#Blips+1] = createBlip(v.ShopPos)
@@ -130,7 +130,7 @@ Citizen.CreateThread(function()
                                         type = 'success',
                                         position = 'top-left'
                                     })
-                                    TriggerServerEvent("o_shopandrobbery:waitingNextRobbery",k,v.Name)
+                                    TriggerServerEvent("e_shopandrobbery:waitingNextRobbery",k,v.Name)
 									ClearPedTasks(v.Ped)
 									StartAnim(v.Ped, 'anim@heists@box_carry@', 'idle')
                                     pack = CreateObject(GetHashKey('prop_cash_case_02'), coordsPED.x, coordsPED.y, coordsPED.z,  true,  true, true)
@@ -163,6 +163,7 @@ Citizen.CreateThread(function()
                                             }) then
                                                 v.CashRegister1.robbed = true
                                                 -- TriggerServer For money
+                                                TriggerServerEvent("e_shopandrobbery:Rob")
                                             end
                                         end
                                     end
@@ -190,6 +191,7 @@ Citizen.CreateThread(function()
                                             }) then
                                                 v.CashRegister2.robbed = true
                                                 -- TriggerServer For money
+                                                TriggerServerEvent("e_shopandrobbery:Rob")
                                             end
                                         end
                                     end
@@ -228,7 +230,7 @@ Citizen.CreateThread(function()
 											},
 										})
                                         -- TriggerServer For money
-
+                                        TriggerServerEvent("e_shopandrobbery:Rob",k)
                                         ClearPedTasks(v.Ped)
 										TaskPlayAnim(v.Ped, 'anim@heists@box_carry@', "exit", 3.0, 1.0, -1, 49, 0, 0, 0, 0)
 										DeleteEntity(pack)
@@ -246,7 +248,8 @@ Citizen.CreateThread(function()
                         lib.notify({
                             title = 'Braquage de superette',
                             description = 'pas assez de policier en ville',
-                            type = 'error'
+                            type = 'error',
+                            position = 'top-left'
                         })
                     end
                 end
@@ -256,8 +259,8 @@ Citizen.CreateThread(function()
     end
 end)
 
-RegisterNetEvent("o_shopandrobbery:respawnNPC")
-AddEventHandler("o_shopandrobbery:respawnNPC",function(key)
+RegisterNetEvent("e_shopandrobbery:respawnNPC")
+AddEventHandler("e_shopandrobbery:respawnNPC",function(key)
     for k,v in pairs(shopsNpc) do
         if v.Name == shopsNpc[key].Name then
             if not DoesEntityExist(v.Ped) then

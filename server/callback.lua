@@ -1,4 +1,4 @@
-lib.callback.register("o_shopandrobbery:getListRobbery",function()
+lib.callback.register("e_shopandrobbery:getListRobbery",function()
     return Robbery
 end)
 
