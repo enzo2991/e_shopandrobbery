@@ -1,8 +1,8 @@
 # preview
 
-
-![video](https://github.com/enzo2991/e_shopandrobbery/assets/19875371/318df790-3228-472a-9c92-95db645d3117)
-
+<video>
+  <source src="https://github.com/enzo2991/e_shopandrobbery/assets/19875371/318df790-3228-472a-9c92-95db645d3117" type="video/mp4"/>
+</video>
 
 # dependencies
 
