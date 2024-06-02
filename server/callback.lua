@@ -1,7 +1,5 @@
-local robbery = {}
-
 lib.callback.register("o_shopandrobbery:getListRobbery",function()
-    return robbery
+    return Robbery
 end)
 
 lib.callback.register("e_shopandrobbery:CountPolice",function ()
@@ -23,11 +21,3 @@ lib.callback.register("e_shopandrobbery:CountPolice",function ()
 end)
 
 
-RegisterNetEvent("o_shopandrobbery:waitingNextRobbery",function (key,Name)
-    Citizen.CreateThread(function()
-        robbery[key] = {Name = Name}
-        Citizen.Wait(Config.TimeReset * 60000)
-        TriggerClientEvent("o_shopandrobbery:respawnNPC",-1,key)
-        robbery[key] = nil
-    end)
-end)

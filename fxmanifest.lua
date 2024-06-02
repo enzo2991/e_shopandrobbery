@@ -19,7 +19,10 @@ shared_scripts {
 }
 
 server_scripts {
-    'server/callback.lua'
+    'server/callback.lua',
+    'server/bridge.lua',
+    'server/event.lua',
+    'server/state.lua'
 }
 
 
