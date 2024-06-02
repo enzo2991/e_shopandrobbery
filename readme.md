@@ -1,5 +1,9 @@
 # preview
 
+
+![video](https://github.com/enzo2991/e_shopandrobbery/assets/19875371/318df790-3228-472a-9c92-95db645d3117)
+
+
 # dependencies
 
 - [ox_inventory](https://github.com/overextended/ox_inventory/releases/latest)
